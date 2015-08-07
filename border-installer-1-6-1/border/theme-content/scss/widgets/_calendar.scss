@@ -1,0 +1,17 @@
+.widget_calendar {
+
+    caption {
+        @extend .hN;
+        @extend .gamma;
+        @include rem(margin-bottom, $_u2);
+    }
+
+    th, td {
+        text-align: center;
+        padding: 6px 8px;
+    }
+
+     table tbody tr:nth-of-type(odd) {
+     	background-color:transparent;
+     }
+}

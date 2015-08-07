@@ -1,0 +1,88 @@
+/*--------------------------------*\
+               HEADER
+\*--------------------------------*/
+
+
+
+
+
+
+/*----------------------------------------*\
+    $TITLE/LOGO
+\*----------------------------------------*/
+
+.site-home-title {
+    @include media-query(lap-and-up) {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        
+        height: $grid-size-unit;
+
+        @include transform(translateX(-50%));
+    }
+
+    margin: 0;
+
+    font-family:$base-font-family;
+    font-size:24px;
+    letter-spacing:0.3em;
+    text-transform: uppercase;
+
+    .flexbox{
+        height: 100%;
+    }
+
+    a {
+        display: block;
+        margin: 0 auto;
+
+        &.using-retina-logo img{
+            @media only screen and (max-width: 480px){
+                max-width: 50%;
+            }
+
+            @media only screen and (min-width: 480px) and (max-width : 899px) {
+                max-width: 25%;
+            }
+
+            @media only screen and (min-width: 900px){
+                max-width: 50%;
+            }            
+        }
+    }
+
+    img {
+        display: block;
+    }    
+}
+
+.site-logo {
+    width:100%;
+    text-align: center;
+
+    img {
+        display:block;
+        margin: 0 auto;
+    }  
+
+}
+
+.site-logo--text{
+    background: white;
+    @include border-radius(3px);
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.site-header .grid__item{
+    vertical-align: middle;
+}
+
+
+.logo-overflow {
+    .gallery--is-fullscreen .site-home-title{
+        display: none;
+    }
+}
+

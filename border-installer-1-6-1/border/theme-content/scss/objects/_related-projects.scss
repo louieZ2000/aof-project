@@ -1,0 +1,53 @@
+/*----------------------------------------*\
+*   $RELATED PROJECTS
+\*----------------------------------------*/
+
+.related-projects-container{
+    .portfolio-grid-title{
+        font-family: $alt-font-family;
+        font-size: 14px;
+        padding-bottom: $_u2;
+        margin-bottom: $_u2;
+    }
+
+    .portfolio-grid-category{
+        font-size: 13px;
+    }
+
+    .mosaic{
+        background: none;
+        border: 0;
+        margin-left: -6px;
+        margin-right: -6px;
+    }
+
+    @media screen and (max-width: 480px) {
+        .mosaic__item  {
+            width: 100%;
+        }
+    }    
+
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+        .mosaic__item  {
+            width: 50%;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .mosaic__item  {
+            width: 33.33333%;
+        }
+    }    
+}
+
+.related-projects-title{
+	@include font-size(14px);
+	font-family: $alt-font-family;
+	text-transform: uppercase;
+}
+
+div.yarpp-related h3.emphasize{
+	padding-left: 24px !important;
+	margin-bottom: 24px !important;
+	padding-bottom: 0 !important;
+}

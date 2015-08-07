@@ -1,0 +1,19 @@
+/*---------------------------------*\
+         $PUSH MENU SIDEBAR
+\*---------------------------------*/
+.sidebar--menu {
+    background:$dark;
+    padding: $_u2 $_u;
+    color:white;
+    font-size:12px;
+
+    a {
+    	font-size:13px;
+    	color:white;
+    	@extend %link--simple; 
+
+    	&:hover {
+    		color:$accent;
+    	}
+    }
+}

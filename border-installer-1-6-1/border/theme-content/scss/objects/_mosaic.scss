@@ -1,0 +1,261 @@
+/*----------------------------------------*\
+    $MOSAIC
+\*----------------------------------------*/
+/**
+ * Mosaic styling for grid galleries and portfolios:
+ *
+    <div class="mosaic mosaic--grid mosaic--masonry">
+        <div class="mosaic__item">
+            <a href=#>
+                <div class="mosaic__image">
+                    <img src="image.jpg">
+                </div>
+                <div class="mosaic__meta"> 
+                    <div class="flexbox">
+                        <div class="flexbox__item">
+                            <div class="meta__icon"> + </div>
+                            <div class="meta__title">Project Title</div>
+                            <hr class="separator">
+                            <div class="meta__category">Photography</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+ *
+ */
+
+
+.content .mosaic {
+    border:$_u4 solid transparent;
+}
+
+.mosaic-wrapper{
+    position: relative;
+
+    @include media-query(palm) {
+        padding-bottom: $grid-size-unit;
+    }
+}
+
+.mosaic {
+    border:$_u4 solid transparent;
+    text-align: center;
+
+    @extend .cf; 
+}
+
+
+.mosaic__item {
+
+    & {
+        border:$_u4 solid transparent;
+        float:left;
+    }
+
+    &.item--video, &.item--link {
+        .mosaic__meta {
+            @include opacity(1); 
+        }
+    }
+
+    &:hover, .touch .mosaic--archive & {
+        .mosaic__meta{
+            @include opacity(1);
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .separator {
+            max-width:80%;
+            margin-top:$_u;
+            margin-bottom:$_u;
+
+            @include media-query(palm){
+                margin-top: $_u2;
+                margin-bottom: $_u2;
+            }
+        }
+    }    
+        
+    a {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        @extend %link--simple; 
+        padding: 0; 
+        color: white;
+    }
+}
+
+    .mosaic__image {
+        position: relative;
+        padding-top: 100%;
+
+        &.no-image{
+            padding-top: 100%;
+            background: #000000;
+        }
+
+        &.no-image + .mosaic__meta{
+            @include opacity(1);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .mosaic__meta {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        // z-index: 1;
+
+        @include opacity(0);
+        @include transition(all 0.2s);
+
+		.mosaic__title &{
+			@include opacity(1);
+			background: black;
+
+			h1{
+				font-size: 35px;
+			}
+			
+			a{
+				cursor: default;
+			}
+		}
+
+        .flexbox {
+            height:100%;
+        }
+
+        .separator {
+            max-width:0;
+            margin: 0 auto;
+            @include transition(all 0.3s bezier(easeOutBack))
+        }
+    }
+
+    // Container used for direction-aware hover
+    .mosaic__hoverdir {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+        .meta__title {
+            margin:0;
+            line-height:1.1;
+
+            @include media-query(palm){
+                font-size: 16px;
+                font-weight: 100;
+            }
+        }
+        .meta__category {
+            @extend .meta-box__title;
+            @extend .smallprint;
+            display:block;
+
+            @include media-query(palm){
+                font-weight: normal !important;
+            }
+        }
+        .meta__icon {
+            font-size:2em;
+            font-family:serif;
+            text-align: center;
+            
+            i {
+                font-size:36px;
+            }
+        }
+
+
+
+/*
+ * Responsiveness
+ */
+
+@media screen and (max-width: 899px) {
+    .mosaic__item  {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1249px) {
+    .mosaic__item  {
+        width: 33.33333%;
+    }
+}
+
+@media screen and (min-width: 1250px) and (max-width: 1700px) {
+    .mosaic__item  {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1701px) {
+    .mosaic__item  {
+        width: 20%;         
+    }
+}
+
+
+
+/*----------------------------------------*\
+    $MASONRY
+\*----------------------------------------*/
+
+.mosaic--masonry {
+    
+}
+
+
+
+/*----------------------------------------*\
+    $GRID
+\*----------------------------------------*/
+.mosaic--grid {
+ 
+}
+
+
+
+
+
+/*----------------------------------------*\
+    $Infine scroll loading
+\*----------------------------------------*/
+#infscr-loading{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    padding: $_u 0;
+    z-index: 10;
+    @include transform(translateX(-50%));
+    @include background(rgba(0, 0, 0, 0.7));
+
+    em{
+        @include font-size(12px);
+        font-style: normal;
+        font-weight: normal;
+        color: white;
+    }
+}
+
+.infinite_scroll + .pagination--archive{
+    display: none;
+}
+
+

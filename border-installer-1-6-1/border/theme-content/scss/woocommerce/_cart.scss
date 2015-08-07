@@ -1,0 +1,48 @@
+.shop_table.cart{
+
+	a{
+		border-bottom: none;
+	}
+
+	tr:first-of-type{
+		border-top: 0;
+	}
+
+	.product-name{
+		text-align: left;
+	}
+
+	.product-quantity{
+		text-align: center;
+	}
+
+	.product-thumbnail{
+		width: 100px;
+	}
+
+	.actions{
+		@extend .cf;
+	}
+
+	.coupon, .coupon input{
+		float: left;
+	}
+
+}
+
+.cart-submit-buttons{
+	text-align: right;
+
+	@include media-query(palm) {
+		input, a{
+			width: 100%;
+			float: none;
+			text-align: center;
+			margin-bottom: $_u2;
+		}
+	}
+}
+
+.shipping-calculator-button{
+	float: left;
+}

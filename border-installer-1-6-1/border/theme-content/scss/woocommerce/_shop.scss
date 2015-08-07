@@ -1,0 +1,58 @@
+// WooCommerce Shop / Archive
+
+.mosaic__item.product{
+	position: relative;
+
+	&:hover, .touch &{
+		.add_to_cart_button{
+			@include opacity(1);
+
+			&:after{
+				@include opacity(1);
+				@include transform(translateX(0));			
+			}			
+		}		
+	}
+
+	.add_to_cart_button{
+		position: absolute;
+		padding: $_u;
+		left: 0;
+		bottom: 0;
+		@include opacity(0);
+
+		&:after{
+			content: "Add to cart";
+			margin-left: $_u2;
+			@include opacity(0);
+			@include transform(translateX(-25px));			
+
+			font-family: $alt-font-family;
+			@include font-size(12px);
+			text-transform: uppercase;
+			@include transition(all 0.2s linear);
+		}
+
+		&:hover:after{
+			@include opacity(1);
+			@include transform(translateX(0));			
+		}
+	}
+
+	.added_to_cart{
+		position: absolute;
+		padding: $_u;
+		right: 0;
+		bottom: 0;
+		
+		font-family: $alt-font-family;
+		@include font-size(12px);
+		text-transform: uppercase;		
+	}
+
+	@media screen and (max-width: 480px){
+		.add_to_cart_button, .onsale{
+			display: none;
+		}
+	}
+}

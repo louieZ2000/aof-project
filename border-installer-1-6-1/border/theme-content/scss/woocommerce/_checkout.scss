@@ -1,0 +1,48 @@
+// Checkout
+
+
+#ship-to-different-address, .form-row.create-account{
+	label, input{
+		display: inline-block;
+	}
+
+	label{
+		padding-left: 0;
+		margin: 0 $_u2 0 0;
+	}
+}
+
+.checkout_coupon{
+	margin-top: $_u;
+}
+
+.payment_methods.methods{
+	@extend .nav;
+	@extend .nav--stacked;
+
+	li{
+		@extend .cf;
+		position: relative;
+		padding-left: $_u;
+	}
+
+	input[type="radio"]{
+		float: left;
+		position: absolute;
+		top: $_u4;
+		left: 0;
+	}
+
+	label{
+		display: inline-block;
+		margin-bottom: $_u2;
+	}
+
+	.payment_box{
+		@include font-size(14px);
+	}
+}
+
+#order_review{
+	margin-bottom: $_u;
+}

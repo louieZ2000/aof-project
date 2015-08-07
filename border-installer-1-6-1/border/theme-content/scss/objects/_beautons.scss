@@ -1,0 +1,88 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+.btn {
+    padding: $_u2 $_u + $_u2;
+    color: #a6a1a1;
+    background: $dark;
+    @include background(linear-gradient(#313131, #1e1e1e));
+    letter-spacing: .0625em;
+    @include font-size(14px);
+    @include border-radius(24px);
+    @include transition(all .15s);
+
+    &:hover {
+        background: $accent;
+        @include background(linear-gradient($accent, #31d676));
+
+        color:white;
+    }
+
+    &.btn--beta { @include font-size(14px, true, 1.25); }
+    &.btn--alpha { @include font-size(14px, true, 1.5); }
+}
+
+.btn--primary {
+    background: $accent;
+    color: white;
+
+    &:hover {
+        background: $dark;
+    }
+}
+
+.btn--secondary {
+    color: white;
+}
+
+.btn--tertiary {
+    @extend .btn--secondary;
+    background: $light;
+}
+
+.btn--transparent {
+    background: transparent;
+    border-width:2px !important;
+    border-style: solid;
+    border-color:#fff;
+}
+
+
+/*------------------------------------*\
+    $SIZES
+\*------------------------------------*/
+.btn--small {
+    @include font-size(13px);
+    padding: $_u4  $_u;
+    &.btn--beta { @include font-size(11px, true, 1); }
+    &.btn--alpha { @include font-size(11px, true, 1.25); }
+}
+
+.btn--large {
+    @include font-size(14px);
+    padding: $_u2 $_u + $_u2;
+    &.btn--beta { @include font-size(14px, true, 1.75); }
+    &.btn--alpha { @include font-size(14px, true, 2); }
+}
+
+.btn--huge {
+    padding: $_u2 $_u;
+    @include border-radius(36px);
+    @include font-size(20px, true, 2);
+    &.btn--beta { @include font-size(20px, true, 2.5); }
+    &.btn--alpha { @include font-size(20px, true, 3); }
+}
+
+.btn-list {
+    @extend .cf;
+    padding: 0;
+    margin: 0 0 0 -2px;
+    list-style: none;
+
+    > .btn, > li, > a {
+        float: left;
+        margin-left: 2px;
+        margin-bottom: 2px;
+    }
+}

@@ -1,0 +1,24 @@
+@import "compass/css3";
+.wpcf7-comment-form{
+    @extend .grid;
+}
+
+.wpcf7-author, .wpcf7-email, .wpcf7-message{
+    @extend .grid__item;
+    font-style: normal;
+
+    input, textarea{
+        border: 0;
+        @include border-radius(3px);
+    }
+}
+
+.wpcf7-author, .wpcf7-email{
+    @extend .one-whole;
+    @extend .lap-and-up-one-half;
+}
+
+.wpcf7-form-control.wpcf7-submit{
+	@extend .btn;
+	@extend .btn--primary;
+}

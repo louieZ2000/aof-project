@@ -1,0 +1,37 @@
+/**
+ * Separator Shortcode
+ * <hr class="separator" />  
+ */
+
+ /*==========  $SEPARATORS  ==========*/
+
+.separator {
+    border: 0;
+    border-bottom: 2px solid $dark;
+    margin: $_u 0;
+}
+
+.separator--light{
+    border-bottom: 2px solid white;
+}
+
+.separator--section, %separator--section {
+    @include rem(padding-bottom, $_u);   
+    @include rem(margin-bottom, $_u - 5px);
+    border-bottom: 0 solid $dark;
+    @include rem(border-bottom-width, 5px);
+}
+
+.separator--subsection, %separator--subsection {
+    width: 100%;
+    @include rem(height, 5px);    
+    @include rem(margin-bottom, $_u - 5px);
+    @include rem(margin-top, $_u);
+}
+
+.separator--dotted{
+    height: 1px;
+    border: 0;
+    border-bottom: 1px dotted $dark;
+}
+

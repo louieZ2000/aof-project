@@ -1,0 +1,261 @@
+/*------------------------------------*\
+               TYPOGRAPHY
+\*------------------------------------*/
+
+@import url(http://fonts.googleapis.com/css?family=Merriweather:300,400italic,700,900);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,700);
+
+
+body{
+    font-size:16px;
+    line-height: 1.625;
+}
+
+
+/*------------------------------------*\
+               LINKS
+\*------------------------------------*/
+
+%link--simple {
+    // text-decoration:none;
+    border-bottom-width:0;
+}
+
+a {
+    color: $light;
+    text-decoration: none; 
+    border-bottom: 1px solid #bfbfbf;
+
+    padding-bottom:2px;
+
+    &:hover{
+        color: $accent;
+        border-color: $accent;
+    }
+
+    &:hover, &:active, &:focus {
+        outline: 0;
+    }
+}
+
+.link--simple {
+    &, a {
+        @extend %link--simple;
+    }
+}
+
+.text-link{
+    @include font-size(12px);
+    text-transform: uppercase;
+    // color: black;
+    // text-decoration: underline;    
+}
+
+
+
+
+
+/*------------------------------------*\
+               BLOCKQUOTES
+\*------------------------------------*/
+
+blockquote {
+    margin: $_u + $_u2 0;
+    padding-left: $_u;
+
+    font-family: $heading-font-family;
+    @include rem(font-size, 22px);
+    line-height: 1.65;
+    font-style: italic;
+    color: $light;
+
+    border-left: 12px solid $accent;
+
+    quotes: "";
+    text-indent:0;
+
+    cite{
+        @include font-size(12px);
+        display: block;
+        color: $dark;
+        margin-top: $_u2;        
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+               HEADINGS
+\*------------------------------------*/
+
+h1, h2, h3, hgroup, h4, h5, h6, .hN {
+    font-family: $heading-font-family;
+    font-weight: 900;
+    @include rem(margin-top, $_15u);
+    @include rem(margin-bottom, $_u2);
+
+    &.emphasize{
+        padding-left: $_u;
+        margin-bottom: $_u;
+
+        border-left: 10px solid $accent;
+
+        line-height: 1;
+    }
+
+    a {
+        text-decoration:none;
+        border-bottom:none;
+        color:inherit;
+    }
+}
+
+h4, h5, h6{
+    text-transform: uppercase;
+    font-weight:bold;
+}
+
+
+$h1-size: 46px; // .alpha
+$h2-size: 24px; // .beta
+$h3-size: 19px; // .gamma
+$h4-size: 15px; // .delta
+$h5-size: 12px; // .epsilon
+$h6-size: 10px; // .zeta
+
+
+h1,.alpha{
+    font-size: $h1-size;
+}
+h2,.beta{
+    font-size: $h2-size;
+}
+h3,.gamma{
+    font-size: $h3-size;
+}
+h4,.delta{
+    font-size: $h4-size;
+}
+h5,.epsilon{
+    font-size: $h5-size;
+}
+h6,.zeta{
+    font-size: $h6-size;
+}    
+     
+
+//Headings scaling - based on
+//http://typecast.com/blog/a-more-modern-scale-for-web-typography
+
+$lap-scale-size: 0.83;
+@include screen(601px, 999px) {
+    h1,.alpha{
+        font-size: $h1-size*$lap-scale-size;
+    }  
+}
+
+
+$palm-scale-size: 0.66;
+@include max-screen(600px) {
+    h1,.alpha{
+        font-size: $h1-size*$palm-scale-size;
+    }
+    h2,.beta{
+        font-size: $h2-size*$lap-scale-size; 
+    }
+    h3,.gamma{
+        font-size: $h3-size*$lap-scale-size;
+    }
+    blockquote {
+        font-size: 18px;
+    }    
+}
+
+
+
+
+
+/*------------------------------------*\
+               TABLES
+\*------------------------------------*/
+
+.table--bordered{
+
+    tr {
+        border-top: 1px dotted #b2b2b2;
+
+        .site-footer & {
+            border-top-color: lighten($dark, 20%);
+        }
+    }
+
+    th,
+    td{
+        border: 0;
+
+        &:empty{
+            border:inherit;
+        }
+    }
+}
+
+.table--striped{
+
+    tbody tr:nth-of-type(odd){
+        background-color:#fbfbfb; /* Override this color in your theme stylesheet */
+
+        .site-footer & {
+            background-color: lighten($dark, 5%);
+        }
+    }
+}
+
+table {
+    @extend .table--bordered;
+    @extend .table--striped;
+}
+
+
+
+
+
+/*------------------------------------*\
+               LISTS
+\*------------------------------------*/
+
+ol{
+    @include rem(padding-left, $_2u - 5px);
+    margin-left: 0;
+    margin-top: $_u + $_u2;
+    margin-bottom: $_u + $_u2;
+    color: $light;
+
+    ul &, ol &, dl & {
+        @include rem(margin-left, $_2u);
+        border-left: 0;
+        padding-left: 0;
+    }
+
+    li {
+        padding-bottom: $_u4;
+    }
+}
+
+dl {
+
+}
+
+dt {
+    font-weight: bold;
+
+    dd + & {
+        @include rem(margin-top, $_u);
+    }
+}
+
+dd {
+    margin-left: 0;
+}

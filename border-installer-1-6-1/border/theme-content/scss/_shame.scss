@@ -1,0 +1,106 @@
+// /*------------------------------------*\
+//               GENERAL STUFF
+// \*------------------------------------*/
+
+html{
+	background-color: #f5f5f5;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+ 
+.animations .wrapper{
+	visibility: hidden;
+
+	.loaded &{
+		visibility: visible;
+	}
+}
+
+.show-on-ie8 {
+    display: none;
+}
+
+.lt-ie9 .show-on-ie8 {
+    display: block;
+}
+
+.page__content{
+	padding: 1px 0;
+}
+
+//AddThis hide the tooltip shown on hover over the plus button
+#at15s.atm {
+	display: none !important;
+}
+
+
+// Push Menu Nice Scroll position
+#ascrail2001 {
+    right:0;
+}
+
+
+//temporary
+// .mfp-content{
+//     .gallery-infobox__logo, .gallery-infobox__description{
+//         display: none;
+//     }
+// }
+
+
+//animations
+// .animations{
+//     .content--blog article{
+//         @include opacity(0);
+//     }
+
+//     .pagination--archive{
+//         @include opacity(0);
+//     }    
+
+//     .mosaic__item{
+//         @include opacity(0);
+//     }
+// }
+
+
+
+
+
+/*----------------------------------------*\
+    $IE8 SHAME
+\*----------------------------------------*/
+@include media-query(lap-and-up) {
+    .article--split__left{
+        .lt-ie9 &{
+            right: 52%;
+        }
+    }
+}
+
+.lt-ie9{
+    .social-links:hover{
+        .social-links-list{
+            display: block;
+
+            a{
+                @include opacity(1);
+            }
+        }
+    }
+
+    .form-submit #comment-submit{
+    	background: black;
+    	border: 0;
+    }
+}
+
+.navigation--is-visible{
+  overflow: hidden;
+}
+
+html, body {
+    -ms-touch-action: auto !important;
+    touch-action: auto !important;
+}
+
+

@@ -1,0 +1,169 @@
+/*------------------------------------*\
+    $PAGINATION
+\*------------------------------------*/
+
+%pagination-item--primary{
+    @extend .btn;
+    width: 30px;
+    height: 30px;
+    @include border-radius(50%);
+    padding: 0;
+    background: none;
+
+    text-align: center;
+    color: $dark;
+    line-height: 30px;
+
+    &.current{
+        color: white;
+        background: $dark;
+    }
+}
+
+%pagination-item--primary-inv{
+    color: white;
+    background: $light;
+
+    &.current{
+        background: white;
+        color: $dark;
+    }
+
+    &:hover{
+        background: $accent;
+    }
+}
+
+%pagination-item--secondary{
+    display: inline !important;
+
+    font-size: 14px;
+    color: $dark;
+    text-transform: uppercase;
+    @extend %link--simple;
+
+    &:hover{
+        color: $accent;
+        background: none;
+    }    
+}
+
+%pagination-item--secondary-inv{
+    background: transparent;
+    color: white;
+
+    &:hover{
+        color: $accent;
+    }
+}
+
+.pagination--archive{
+    padding: $_2u;
+
+    ol{
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+
+        li{
+            padding: 0 $_u4;
+            text-align: center;
+
+            a, span{
+                @extend %pagination-item--primary;              
+            }
+        }
+
+        li:first-child{
+            text-align: left;
+
+            a{
+                @extend %pagination-item--secondary;         
+            }
+
+            span{
+                @extend %pagination-item--primary;                
+            }            
+        }
+
+        li:last-child{
+            text-align: right;
+
+            a{
+                @extend %pagination-item--secondary;            
+            }
+
+            span{
+                @extend %pagination-item--primary;                
+            }            
+        }
+    }
+}
+
+.pagination--archive.inversed{
+    ol{
+
+        li{
+
+            a, span{
+                @extend %pagination-item--primary-inv;              
+            }
+
+            span.dots{
+                color: white;
+                background: $light;
+                cursor: default;
+
+                &:hover{
+                    background: $light;
+                }
+            }            
+        }
+
+        li:first-child{
+            text-align: left;
+
+            a{
+                @extend %pagination-item--secondary-inv;         
+            }
+
+            span{
+                @extend %pagination-item--primary-inv;                
+            }
+        }
+
+        li:last-child{
+            text-align: right;
+
+            a{
+                @extend %pagination-item--secondary-inv;            
+            }
+
+            span{
+                @extend %pagination-item--primary-inv;                
+            }            
+        }
+    }    
+}
+
+
+
+
+
+
+.pagination--single{
+    margin: $_u2 0 $_2u;
+    padding: 0;
+
+    a{
+        color: $dark;
+    }
+
+    li{
+        padding: 0 $_u4;
+    }
+
+    li:first-child{
+        padding-left: 0;
+    }
+}

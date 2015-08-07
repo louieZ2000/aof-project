@@ -1,0 +1,22 @@
+/*-------------------------------------*\
+               PROGRESSBAR
+\*-------------------------------------*/
+
+.progressbar {
+    @extend .cf;
+    margin-bottom: $_u;
+}
+
+.progressbar__progress {
+	@include rem(height, $_u2);
+	position: relative;
+	background-color: $accent;
+	width: 0;
+	@include transition(width 1s cubic-bezier(0.680, -0.550, 0.265, 1.550));
+}
+
+.progressbar__tooltip {
+	position: absolute;
+	right: -42px;
+	top: -7px;
+}

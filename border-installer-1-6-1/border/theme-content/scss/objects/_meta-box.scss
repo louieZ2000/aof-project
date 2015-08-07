@@ -1,0 +1,58 @@
+/*-------------------------------------*\
+    META BOXES (title + list of links)
+\*-------------------------------------*/
+
+.entry__meta {
+    @extend .smallprint;
+}
+
+.entry__meta-box{
+    a {
+        @extend %link--simple;
+    }
+
+    ul {
+        @extend .flush--bottom;
+    }
+
+    ul li{
+        &:after{
+            content: ",";
+						margin-right: 5px;
+        }
+        &:last-child:after {
+             content: "";
+					margin-right: 0;
+        }
+    }
+
+    @include media-query(palm){
+        margin-bottom: $_u;
+    }    
+}
+
+    .meta-box__title{
+        font-weight: bold;
+        text-transform: uppercase;
+				margin-right: 5px;
+    }
+
+
+// Portfolio Meta Boxes (eg. Clients, Categories)
+.meta-box--portfolio {
+
+    // to keep the title and metaboxes dividers aligned
+    min-height: 46px;
+
+    a {
+        color: $dark;
+        &:hover {
+            color:$accent;
+        }
+    }
+
+    .meta-box__title {
+        display:block;
+        margin-bottom: $_u2;
+    }
+}

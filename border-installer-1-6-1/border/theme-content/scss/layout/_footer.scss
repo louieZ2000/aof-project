@@ -1,0 +1,92 @@
+/*--------------------------------*\
+               FOOTER
+\*--------------------------------*/
+
+@include media-query(palm) {
+    .site-footer {
+        background: white;
+    }
+}
+
+
+@include media-query(palm) {
+    .footer__container{
+        text-align: center;
+    }
+}
+
+@include media-query(lap-and-up) {
+    .footer__container{
+        height: 42px;
+        display: table;
+        width: 100%;
+    }
+
+    .footer__content{
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .footer-menu{
+        margin-left: $_u;        
+    }    
+}
+
+.footer-social-icons{
+    a{
+        @include font-size(14px);
+        // text-decoration: none;
+        border-bottom:none;
+        color: $dark;
+    }
+}
+
+.copyright-info{
+    @include font-size(11px);
+
+}
+
+.footer-social-icons, .copyright-info, .footer-menu{
+    display: inline-block;
+}
+
+.up-link{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: none;
+
+    a{
+        display: block;
+        border-bottom:none;
+        padding: 8px;
+        color: $dark;
+        @include font-size(20px);
+    }
+}
+
+
+@include media-query(palm) {
+    .footer-categories-list{
+        text-align: center;
+        margin: $_u 0;
+    }
+
+    .site-footer__content{
+        text-align: center;
+    }    
+    
+}
+
+@include media-query(lap-and-up) {
+    .footer-categories-list{
+        margin: 0;
+        float: right;
+    }
+
+    .footer-social-icons{
+        float: left;
+        margin-right: $_u;    
+    }
+}

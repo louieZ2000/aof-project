@@ -1,0 +1,178 @@
+/*----------------------------------------*\
+    $GENERAL LAYOUT STYLES
+\*----------------------------------------*/
+
+.site-header{
+    height: $grid-size-unit;
+}
+
+@include media-query(palm) {
+    .site-header, .site-footer{
+        padding-left: $_u + $_u2;
+        padding-right: $_u + $_u2;
+    }
+}
+
+@include media-query(lap-and-up) {
+    .site-header, .site-footer{
+        height: $grid-size-unit;
+        padding-left: $grid-size-unit;
+        padding-right: $grid-size-unit;  
+    }
+}
+
+
+.site-header{
+    top: 0;
+}
+
+.site-footer{
+    bottom: 0;
+}
+
+@include media-query(palm) {
+    .wrapper{
+        padding: 0;
+
+        .logo-overflow &{
+            padding: 42px 0 0 0;
+        }
+    }
+
+    .site-footer{
+        height: auto;
+    }
+}
+
+@include media-query(lap-and-up) {
+    .site-header, .site-footer{
+        right: 0;
+        left: 0;
+        position: absolute;
+    }
+
+    .wrapper{ 
+        padding: $grid-size-unit;
+        
+    }
+}
+
+.is--gallery-grid{
+    background: $dark;
+}
+
+.fixed-bar{
+    position: fixed;     
+    background: white;
+
+    @include media-query(palm) {
+        position: static;
+    }
+}
+
+    .vertical-bar{
+        width: $grid-size-unit;
+        height: 100%;
+        top: 0;
+        bottom: 0;   
+
+        @include media-query(palm){
+            display: none;
+        }
+    }
+
+        .right-bar{
+            right: 0;
+        }
+
+        .left-bar{
+            left: 0;
+        }
+
+    .horizontal-bar{
+        height: $grid-size-unit;
+        width: 100%;
+        left: 0;
+        right: 0;
+        right: 0;
+        z-index: 15;
+    }
+
+        .top-bar{
+            top: 0;
+            @include media-query(palm) {
+                .logo-overflow &.fixed-bar{
+                    position: absolute;
+                }
+            }
+        }
+
+        .bottom-bar{
+            bottom: 0;
+
+            html.is--gallery-fullscreen body.gallery--is-fullscreen &{
+                position: fixed;
+            }
+
+            @include media-query(palm) {
+                height: auto;
+            }
+        }
+
+        @include media-query(palm) {
+            html.is--gallery-fullscreen{
+                
+                .top-bar{
+                    position: absolute;
+                    z-index: 15 !important;
+                }
+                
+                .bottom-bar{
+                    position: absolute;
+                    top: 100%;
+                }
+            }
+        }        
+
+@include media-query(lap-and-up) {
+    html.is--gallery-fullscreen{
+        overflow-y: hidden;
+    }
+}
+
+
+/*----------------------------------------*\
+    $GRID THIN
+\*----------------------------------------*/
+.grid.grid--thin{
+    margin-left: -$_u2;
+
+    > .grid__item{
+        padding-left: $_u2 !important;
+    }
+}
+
+
+/*----------------------------------------*\
+    $NICE SCROLL
+\*----------------------------------------*/
+
+html.nicescroll {
+    overflow: hidden !important;
+    padding-right: 0 !important;
+}
+
+/*----------------------------------------*\
+    $CUSTOM BACKGROUND
+\*----------------------------------------*/
+.bg--tiled, .bg--text {
+    display:none;
+}
+.bg--tiled {
+    background:#1a1717;
+}
+.bg--text {
+    background: #f5f5f5;
+}
+
+

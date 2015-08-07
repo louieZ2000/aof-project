@@ -1,0 +1,27 @@
+.form-search {
+    position: relative;
+    width: 100%;
+    @include rem(height, 36px);
+    @extend .cf;
+}
+
+.search-query {
+    @include font-size(14px);
+    border: 1px solid #ddd;
+    width: 300px !important;
+    margin-right: 10px;
+    float: left;
+    outline: none !important;
+    line-height: 1.2;
+    padding: 8px $_u2;
+}
+
+.search-submit {
+    float: left;
+    height: 44px;
+    // border: 1px solid $dark;
+    @include font-size(14px);
+    @include rem(width, $_2u);
+    @include rem(padding, $_u4);
+    text-align: center;
+}

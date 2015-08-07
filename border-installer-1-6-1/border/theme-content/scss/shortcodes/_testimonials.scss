@@ -1,0 +1,12 @@
+.testimonial__content{
+	margin-bottom: $_u2;
+}
+
+.testimonial__author-name, .testimonial__author-title{
+	@include font-size(12px);
+}
+
+.testimonial__author-name{
+	text-transform: uppercase;
+	font-style: normal;
+}

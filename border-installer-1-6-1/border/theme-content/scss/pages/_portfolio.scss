@@ -1,0 +1,93 @@
+/*----------------------------------------*\
+    $PORTFOLIO
+\*----------------------------------------*/
+
+.pixslider--portfolio{
+}
+
+.portfolio__title{
+    margin-top: 0;
+    line-height: 1;
+}
+
+.portfolio__content{
+    font-size: 14px;
+
+    p:first-of-type{
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+.portfolio--single{
+    position: relative;
+}
+
+.portfolio__container{
+    padding: $_u $_u2;
+}
+
+@include media-query(palm){
+    .entry__meta--portfolio{
+        .social-links{
+            float: none;
+            
+            .social-links-list{
+                @include opacity(1);
+            }
+            
+            .share-logo{
+                float: left;
+            }        
+        }
+    }
+}
+
+@include media-query(desk-wide){
+    
+    .portfolio__container{
+        padding: $grid-size-unit;
+    }
+
+    .entry__meta--portfolio{
+
+        .social-links{
+            float: right;
+
+            .social-links__share-logo{
+                color: black;
+            }
+        }
+
+        .share-logo{
+            float: right;
+        }           
+    }    
+}
+
+
+
+/*----------------------------------------*\
+    $PORTFOLIO ARCHIVE
+\*----------------------------------------*/
+.portfolio-meta{
+    height: 100%;
+}
+
+.portfolio-grid-title{
+    margin-top: 0;
+    line-height: 1;
+    // padding-bottom: $_u;
+    // display: inline-block;
+    // border-bottom: 2px solid white;
+}
+
+.portfolio-grid-category{
+    @include font-size(14px);
+    font-weight:bold;
+    text-transform: uppercase;
+    display: block;
+}
+
+
+

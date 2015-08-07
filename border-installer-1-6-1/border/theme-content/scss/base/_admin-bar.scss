@@ -1,0 +1,40 @@
+/*----------------------------------------*\
+    $ADMIN TOOLBAR Enbaled
+\*----------------------------------------*/
+$toolbar-size: 32px;
+$toolbar-mobile-size: 46px;
+
+html body.admin-bar {
+
+    @media screen and (max-width: 782px) {
+        .top-bar{
+            top: $toolbar-mobile-size;
+        }
+
+        .navigation-container{
+            top: $grid-size-unit + $toolbar-mobile-size;
+        }        
+
+        .content--gallery-slider{
+            top: $toolbar-mobile-size;
+        }                
+    }
+
+    @media screen and (min-width: 783px) {
+        .article--split__left {
+             top: $grid-size-unit+$toolbar-size;
+        }
+
+        .top-bar{
+            top: $toolbar-size;
+        }  
+
+        .content--gallery-slider{
+            top: $toolbar-size;
+        }        
+
+        .navigation-container{
+            top: $grid-size-unit + $toolbar-size;
+        }
+    }  
+}

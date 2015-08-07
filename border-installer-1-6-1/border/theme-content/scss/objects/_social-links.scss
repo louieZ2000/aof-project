@@ -1,0 +1,104 @@
+/*----------------------------------------*\
+    $SOCIAL LINKS
+\*----------------------------------------*/
+
+.social-links{        
+    @extend .cf;
+
+    &:hover {
+        .social-links-list {
+            display:inline-block;
+        }
+
+        .share-logo {
+            background: $dark;
+        }        
+    }     
+
+    .share-logo {
+        float:right;
+        color: white;
+        vertical-align: top;        
+        z-index: 13;
+    }
+
+    .social-links-list {
+        display: none;
+        float: right;
+        pointer-events: none;
+
+        &.is-active { display: block; }     
+        &.clickable{ pointer-events: auto; }
+
+        a {
+            height: $grid-size-unit;
+            width: $grid-size-unit;
+            display: inline-block;
+        }
+
+        .entry__meta--portfolio &{
+            position: absolute;
+            float: none;
+            right: $grid-size-unit;
+            top: 0;    
+        }     
+    }    
+
+    .share-logo, .social-links-list a {
+        height: $grid-size-unit;
+        width: $grid-size-unit;        
+
+        @extend %link--simple;        
+        line-height: $grid-size-unit;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .entry__meta--single &, .gallery-infobox &, .page__content &{
+        position:  absolute;
+        float: none;
+        right: 0;
+        top: 0;
+    }
+
+    @include media-query(palm){
+        .entry__meta--single &, .entry__meta--portfolio &, .page__content &{
+            position: static;
+            display:inline-block;
+
+            .social-links-list{
+                float: left;
+
+                a {
+                 float:right;
+                }
+            }            
+
+            .share-logo{
+                float: left;
+            }            
+        }
+
+        .entry__meta--portfolio & .social-links-list{
+            position: static;
+        }
+    }     
+}
+
+.social-links-helper__container{
+    position: relative;
+    width: 100%;
+}
+
+// Inverse (used for light gray background)
+.social-links.social-links--inverse{
+    .share-logo{
+        color: $dark;
+    }
+
+    &:hover{
+        .share-logo{
+            color:white;
+        }
+    }       
+}

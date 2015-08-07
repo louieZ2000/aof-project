@@ -1,0 +1,207 @@
+.pixproof-border-gallery {
+
+	.proof-photo {
+		border: 6px solid transparent;
+
+		.background-container {
+			padding: 4px;
+			padding-bottom: 0;
+			background: white;
+
+			@include transition(all .2s linear);
+		}
+
+		&:hover, &.scrooled_from_comments, &.selected {
+			background: none;
+
+			.background-container {
+				@include transition(all .2s linear);
+			}
+
+			.proof-photo__id {
+				color: white;
+			}
+
+			.separator {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+
+			.item--action .flexbox__item {
+				padding: 10px 0;
+			}
+		}
+
+		&:hover {
+			.background-container {
+				background: rgba(0, 0, 0, 0.5);
+			}
+		}
+
+		&.selected {
+			.background-container {
+				background: $accent;
+			}
+
+			.proof-photo__status {
+				span {
+
+				}
+			}
+		}
+		&.scrooled_from_comments {
+			.background-container {
+				background: $accent;
+			}
+		}
+	}
+	.proof-photo__status {
+		& {
+			top: auto;
+			bottom: 0;
+			right: 3px;
+		}
+
+		span {
+			background: none;
+			color: white;
+		}
+	}
+
+	.proof-photo__id {
+		font-size: 12px;
+	}
+
+	.touch & {
+		.mosaic__meta {
+			@include opacity(1);
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		.separator {
+			max-width: 80%;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	.lt-ie9 & a {
+		border: 0;
+	}
+}
+
+/* .pixproof-border-gallery */
+
+.lt-ie9 .proof-photo__status span.ticker {
+	display: none;
+}
+
+.actions-nav {
+	height: 100%;
+	margin: 0;
+
+	li:first-child {
+		.flexbox__item {
+			vertical-align: bottom;
+		}
+	}
+
+	li:last-child {
+		.flexbox__item {
+			vertical-align: top;
+		}
+	}
+
+	.item--action {
+		height: 40%;
+
+		a, .flexbox {
+			height: 100%;
+		}
+
+		.flexbox__item {
+			@include transition(all .1s linear);
+		}
+	}
+
+	.item--separator {
+		height: 10%;
+	}
+}
+
+.content--pixproof .article-blog-classic {
+	.article__content {
+		margin-bottom: 0;
+	}
+}
+
+.pixproof_photo_ref {
+	@extend .btn;
+	@extend .btn--small;
+	@extend .btn--secondary;
+}
+
+span.pixproof_photo_ref {
+	padding-left: $_u2;
+	padding-right: $_u2;
+}
+
+.single-proof_gallery {
+	div.mfp-bottom-bar {
+		top: auto;
+		bottom: 15px;
+		left: 50%;
+
+		margin-top: 0;
+		width: 50%;
+
+		@include transform(translateX(-50%));
+
+		.mfp-title {
+			margin-top: -5px !important;
+		}
+	}
+
+	div.mfp-figure:after {
+		content: none;
+	}
+}
+
+/*
+ * Different Grid Breakpoints - item max width: 250px 
+ */
+@media screen and (max-width: 579px) {
+	.mosaic__item.proof-photo {
+		width: 50%;
+	}
+}
+
+@media screen and (min-width: 580px) and (max-width: 899px) {
+	.mosaic__item.proof-photo {
+		width: 33.33333%;
+	}
+}
+
+@media screen and (min-width: 900px) and (max-width: 1249px) {
+	.mosaic__item.proof-photo {
+		width: 25%;
+	}
+}
+
+@media screen and (min-width: 1250px) and (max-width: 1449px) {
+	.mosaic__item.proof-photo {
+		width: 20%%;
+	}
+}
+
+@media screen and (min-width: 1450px) and (max-width: 1700px) {
+	.mosaic__item.proof-photo {
+		width: 16.66%;
+	}
+}
+
+@media screen and (min-width: 1701px) {
+	.mosaic__item.proof-photo {
+		width: 14.28%;
+	}
+}
